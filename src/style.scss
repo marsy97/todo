@@ -1,8 +1,22 @@
+*{
+    font-family:poppins;
+    font-size:1rem;
+    font-weight:bold;
+    text-transform: uppercase;
+}
+
+body{
+    margin:0;
+    padding:0;
+    background:linear-gradient(rgb(166, 239, 241),rgb(184, 206, 199)) no-repeat;
+    height:100vh;
+
+}
+
 .app-container{
     display:flex;
     justify-content: center;
     flex-direction: column;
- 
 }
 
 button{
@@ -10,81 +24,76 @@ button{
 }
 
 .form{
+    box-sizing: border-box;
     margin-top:2rem;
     max-width:50%;
     margin:auto;
     margin-bottom:5rem;
+    width:100%;
     
 }
 .form-button{
     color:white;
     background:rgb(53, 12, 47);
-    text-transform: uppercase;
-    font-weight:bold;
-    font-family:poppins;
     padding:0.5rem;
-    font-size:1rem;
 }
 
 .form-input{
     padding:0.5rem;
     margin:1rem;
-    font-size:1rem;
-    text-transform: uppercase;
-    font-weight:bold;
-    font-family:poppins;
+    background:transparent;
+    border:0;
+    width:80%;
+}
+.form-input:focus{
+    border:none;
+    background:red;
+    background:transparent;
 }
 
 .todo-container{
     
-    display:flex;
     margin:auto;
     width:50%;
-    justify-content: center;
+    
 }
 
 .todo-list{
+    display:flex;
+    flex-direction:column;
     position:relative;
     list-style: none;
-    text-transform: uppercase;
-    font-weight:bold;
-    font-family:poppins;
-    width:50%;
-    margin:auto;
+    width:100%;
     text-align: left;
-
 }
 
 .todo{
     width:100%;
     margin-top:2rem;
+    display:flex;
+    justify-content:space-between;
+    
 }
 
 .todo-item{
     display:inline;
-    padding-right:3rem;
+    padding:0.5rem 1rem 0.5rem 0.5rem;
+    min-width:50%; 
+    border:none;
+    background:rgb(159, 159, 235);
 }
 
-.completed{
-    position:absolute;
-    right:5rem;
-    text-transform: uppercase;
-    font-weight:bold;
-    font-family:poppins;
+.edit{
+    
     color:white;
     background:rgb(82, 238, 82);
     border:none;
     padding:.5rem 1rem;
-    width:200px;
-    height:200px;
+    margin-right:1rem;
 }
 
 .delete{
-    position:absolute;
-    right:0;
-    text-transform: uppercase;
-    font-weight:bold;
-    font-family:poppins;
+    
     color:white;
     background:rgb(243, 69, 69);
     border:none;

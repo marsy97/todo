@@ -3,17 +3,17 @@ import "../style.scss"
 import { useState } from "react";
 
 
-const Todo =({text,item,todo,setTodo})=>{
+const Todo =({text,item,key,todo,setTodo})=>{
 
-    let startingText = "First"
-    const [toggle,setToggle]=useState(false)
-    const [outputText, setOutputText] = useState(startingText)
+    let edit = "EDIT"
+    const [toggle,setToggle]=useState(true)
+    const [outputText, setOutputText] = useState(edit)
+
 
     function textChange() {
         setToggle(!toggle)
-        
-        toggle ? setOutputText(startingText) : setOutputText("eadaeaedaedaedaedae")
-        
+        toggle ? setOutputText("SAVE") : setOutputText(edit)  
+          
     }
 
     const deleteHandle=()=>{
@@ -22,17 +22,14 @@ const Todo =({text,item,todo,setTodo})=>{
     }
 
 
-    const completeHandle=()=>{
-        
-
-
-    }
-
     return(
         <div className="todo">
-            <li className="todo-item" style={{background:toggle?'green':'red'}}>{text}</li>
-            <button onClick={textChange} className="completed">{outputText}</button>
-            <button onClick={deleteHandle} className="delete">delete</button>
+            <input key={key} type='text' style={{background:toggle?"":"purple"}}defaultValue={text} readOnly={toggle} className="todo-item"></input>
+
+            <div className="buttons">
+                <button onClick={textChange} style={{background:toggle?"purple":""}}className="edit">{outputText}</button>
+                <button onClick={deleteHandle} className="delete">delete</button>
+            </div>
             
         </div>
 

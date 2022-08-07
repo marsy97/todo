@@ -10,8 +10,13 @@ const Form =({setInputText,todo,setTodo,inputText})=>{
 
     const submitHandler=(e)=>{
         e.preventDefault()
+        if(inputText!==""){
         setTodo([...todo,{text:inputText, completed:false,id:Math.random()*1000}])
+    }
+        else{
+            alert("Please write something!")
         
+    }
         
         setInputText("")
     }
